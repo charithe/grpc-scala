@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_package = "com.github.charithe.grpc";
+option java_outer_classname = "GrpcSamples";
+
+message TestMessage1 {
+    string stringField = 1;
+    int64 intField = 2;
+    float floatField = 3;
+}
+
+message TestMessage2 {
+    string topLevelField1 = 1;
+    int64 topLevelField2 = 2;
+    TestMessage1 nestedMessage = 3;
+}
+
+message TestMessage3 {
+    string stringField = 1;
+    int64 intField = 2;
+    oneof oneof_field {
+        string oneofStringField = 5;
+        int64 oneofIntField = 6;
+        float oneofFloatField = 7;
+    }
+}
+
+
+
